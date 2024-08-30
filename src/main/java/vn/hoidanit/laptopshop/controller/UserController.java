@@ -23,7 +23,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping("/") // GET
     public String getHomePage(Model model) {
         List<User> users = this.userService.getAllUser();
         System.out.println("Users: " + users);
@@ -34,13 +34,18 @@ public class UserController {
         return "hello";
     }
 
-    @RequestMapping("/admin/user")
+    @RequestMapping("/admin/user") // GET
     public String getUserPage(Model model) {
+        return "/admin/user/table-user";
+    }
+
+    @RequestMapping("/admin/user/create") // GET
+    public String getCreateUserPage(Model model) {
         model.addAttribute("newUser", new User());
         return "admin/user/create";
     }
 
-    @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST)
+    @RequestMapping(value = "/admin/user/create", method = RequestMethod.POST) // POST
     public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
         this.userService.handlerSaveUser(user);
         System.out.println("New user" + user);
