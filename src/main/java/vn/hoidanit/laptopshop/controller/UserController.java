@@ -2,10 +2,12 @@ package vn.hoidanit.laptopshop.controller;
 
 import java.util.List;
 
+import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -52,6 +54,14 @@ public class UserController {
     public String createUserPage(Model model, @ModelAttribute("newUser") User user) {
         this.userService.handlerSaveUser(user);
         return "redirect:/admin/user";
+    }
+
+    @RequestMapping("/admin/user/{id}")
+    public String getUserDetailPage(@PathVariable Long id, Model model) {
+        model.addAttribute("id", id);
+        User user = this.userService.getUserById(id);
+        model.addAttribute("user", user);
+        return "admin/user/show";
     }
 }
 
