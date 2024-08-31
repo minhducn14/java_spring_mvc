@@ -1,6 +1,6 @@
 package vn.hoidanit.laptopshop.domain;
 
-import java.util.Set;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,8 +20,9 @@ public class Role {
 
     private String description;
 
+    // role - one => many - users . ctrl + k . press 's'
     @OneToMany(mappedBy = "role")
-    private Set<User> users;
+    private List<User> users;
 
     public long getId() {
         return id;

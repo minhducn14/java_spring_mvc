@@ -28,11 +28,11 @@ public class User {
     private String avatar;
 
     // roleId
+    // User many -> to one -> role
     @ManyToOne
     @JoinColumn(name = "role_id")
     private Role role;
 
-    // order
     @OneToMany(mappedBy = "user")
     List<Order> orders;
 
@@ -84,28 +84,12 @@ public class User {
         this.phone = phone;
     }
 
-    public Role getRole() {
-        return role;
+    public String getAvatar() {
+        return avatar;
     }
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
-    }
-
-    public User(long id, String email, String password, String fullName, String address, String phone, String avatar,
-            Role role, List<Order> orders) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.fullName = fullName;
-        this.address = address;
-        this.phone = phone;
-        this.avatar = avatar;
-        this.role = role;
-        this.orders = orders;
-    }
-
-    public User() {
     }
 
     @Override

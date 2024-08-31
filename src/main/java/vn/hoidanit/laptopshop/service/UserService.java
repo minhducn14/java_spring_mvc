@@ -9,35 +9,32 @@ import vn.hoidanit.laptopshop.repository.UserRepository;
 
 @Service
 public class UserService {
-
     private final UserRepository userRepository;
 
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    public String handlerHello() {
-        return "Hello";
-    }
-
-    public List<User> getAllUser() {
+    public List<User> getAllUsers() {
         return this.userRepository.findAll();
     }
 
-    public List<User> getAllUserByEmail(String email) {
-        return this.userRepository.findByEmail(email);
+    public List<User> getAllUsersByEmail(String email) {
+        return this.userRepository.findOneByEmail(email);
     }
 
-    public User handlerSaveUser(User user) {
-        User newUser = this.userRepository.save(user);
-        return newUser;
+    public User handleSaveUser(User user) {
+        User eric = this.userRepository.save(user);
+        System.out.println(eric);
+        return eric;
     }
 
-    public User getUserById(Long id) {
-        return this.userRepository.findById(id).orElse(null);
+    public User getUserById(long id) {
+        return this.userRepository.findById(id);
     }
 
-    public void deleteUserById(Long id) {
+    public void deleteAUser(long id) {
         this.userRepository.deleteById(id);
     }
+
 }
