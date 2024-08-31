@@ -2,6 +2,7 @@ package vn.hoidanit.laptopshop.controller;
 
 import java.util.List;
 
+import org.eclipse.tags.shaded.org.apache.xpath.operations.Mod;
 import org.springframework.security.access.method.P;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -83,6 +84,21 @@ public class UserController {
             userUpdate.setAddress(user.getAddress());
             this.userService.handlerSaveUser(userUpdate);
         }
+        return "redirect:/admin/user";
+    }
+
+    @GetMapping("/admin/user/delete/{id}")
+    public String deleteUserPage(@PathVariable Long id, Model model) {
+        model.addAttribute("id", id);
+        User user = new User();
+        user.setId(id);
+        model.addAttribute("newUser", user);
+        return "admin/user/delete";
+    }
+
+    @PostMapping("/admin/user/delete")
+    public String deleteUserPagePost(Model model, @ModelAttribute("newUser") User user) {
+        this.userService.deleteUserById(user.getId());
         return "redirect:/admin/user";
     }
 

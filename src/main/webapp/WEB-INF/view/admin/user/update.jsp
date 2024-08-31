@@ -28,8 +28,8 @@
                             <h3>Update user</h3>
                             <hr />
                             <form:form method="post" action="/admin/user/update" modelAttribute="newUser">
-                                <div class="mb-3">
-                                    <label class="form-label" style="display: none;">Id:</label>
+                                <div class="mb-3" style="display: none;">
+                                    <label class="form-label">Id:</label>
                                     <form:input type="text" class="form-control" path="id" readonly="true" />
                                 </div>
 
