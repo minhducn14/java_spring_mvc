@@ -5,8 +5,7 @@
             <div class="container px-0">
                 <nav class="navbar navbar-light bg-white navbar-expand-xl">
                     <a href="/" class="navbar-brand">
-                        <h1 class="text-primary display-6">Laptopshop
-                        </h1>
+                        <h1 class="text-primary display-6">Laptopshop</h1>
                     </a>
                     <button class="navbar-toggler py-2 px-3" type="button" data-bs-toggle="collapse"
                         data-bs-target="#navbarCollapse">
@@ -14,7 +13,7 @@
                     </button>
                     <div class="collapse navbar-collapse bg-white justify-content-between mx-5" id="navbarCollapse">
                         <div class="navbar-nav">
-                            <a href="/" class="nav-item nav-link active">Trang Chủ </a>
+                            <a href="/" class="nav-item nav-link active">Trang Chủ</a>
                             <a href="/products" class="nav-item nav-link">Sản Phẩm</a>
 
                         </div>
@@ -36,9 +35,9 @@
                                     <ul class="dropdown-menu dropdown-menu-end p-4" aria-labelledby="dropdownMenuLink">
                                         <li class="d-flex align-items-center flex-column" style="min-width: 300px;">
                                             <img style="width: 150px; height: 150px; border-radius: 50%; overflow: hidden;"
-                                                src="/images/product/1711078092373-asus-01.png" />
+                                                src="/images/avatar/${sessionScope.avatar}" />
                                             <div class="text-center my-3">
-                                                <c:out value="${pageContext.request.userPrincipal.name}" />
+                                                <c:out value="${sessionScope.fullName}" />
                                             </div>
                                         </li>
 
