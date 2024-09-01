@@ -6,7 +6,7 @@
 
             <head>
                 <meta charset="utf-8">
-                <title> ${productDetail.name} - Laptopshop</title>
+                <title> ${product.name} - Laptopshop</title>
                 <meta content="width=device-width, initial-scale=1.0" name="viewport">
                 <meta content="" name="keywords">
                 <meta content="" name="description">
@@ -46,25 +46,33 @@
 
                 <jsp:include page="../layout/header.jsp" />
 
-                <!-- Single productDetail Start -->
+                <!-- Single Product Start -->
                 <div class="container-fluid py-5 mt-5">
                     <div class="container py-5">
                         <div class="row g-4 mb-5">
+                            <div>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Chi Tiết Sản Phẩm</li>
+                                    </ol>
+                                </nav>
+                            </div>
                             <div class="col-lg-8 col-xl-9">
                                 <div class="row g-4">
                                     <div class="col-lg-6">
                                         <div class="border rounded">
                                             <a href="#">
-                                                <img src="/images/product/${productDetail.image}"
-                                                    class="img-fluid rounded" alt="Image">
+                                                <img src="/images/product/${product.image}" class="img-fluid rounded"
+                                                    alt="Image">
                                             </a>
                                         </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <h4 class="fw-bold mb-3"> ${productDetail.name}</h4>
-                                        <p class="mb-3">${productDetail.factory}</p>
+                                        <h4 class="fw-bold mb-3"> ${product.name}</h4>
+                                        <p class="mb-3">${product.factory}</p>
                                         <h5 class="fw-bold mb-3">
-                                            <fmt:formatNumber type="number" value="${productDetail.price}" /> đ
+                                            <fmt:formatNumber type="number" value="${product.price}" /> đ
 
                                         </h5>
                                         <div class="d-flex mb-4">
@@ -75,7 +83,7 @@
                                             <i class="fa fa-star"></i>
                                         </div>
                                         <p class="mb-4">
-                                            ${productDetail.shortDesc}
+                                            ${product.shortDesc}
                                         </p>
 
                                         <div class="input-group quantity mb-5" style="width: 100px;">
@@ -109,7 +117,7 @@
                                             <div class="tab-pane active" id="nav-about" role="tabpanel"
                                                 aria-labelledby="nav-about-tab">
                                                 <p>
-                                                    ${productDetail.detailDesc}
+                                                    ${product.detailDesc}
                                                 </p>
 
                                             </div>
@@ -134,25 +142,25 @@
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Oranges</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Dell</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Strawbery</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Asus</a>
                                                         <span>(2)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Banana</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Acer</a>
                                                         <span>(8)</span>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <div class="d-flex justify-content-between fruite-name">
-                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Pumpkin</a>
+                                                        <a href="#"><i class="fas fa-apple-alt me-2"></i>Lenovo</a>
                                                         <span>(5)</span>
                                                     </div>
                                                 </li>

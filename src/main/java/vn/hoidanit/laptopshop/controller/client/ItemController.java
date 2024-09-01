@@ -20,7 +20,7 @@ public class ItemController {
     @GetMapping("/product/{id}")
     public String getProductPage(Model model, @PathVariable long id) {
         Product pr = this.productService.fetchProductById(id).get();
-        model.addAttribute("productDetail", pr);
+        model.addAttribute("product", pr);
         model.addAttribute("id", id);
         return "client/product/detail";
     }
