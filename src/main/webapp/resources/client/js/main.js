@@ -118,7 +118,6 @@
         $('.btn-play').click(function () {
             $videoSrc = $(this).data("src");
         });
-        console.log($videoSrc);
 
         $('#videoModal').on('shown.bs.modal', function (e) {
             $("#video").attr('src', $videoSrc + "?autoplay=1&amp;modestbranding=1&amp;showinfo=0");
@@ -147,10 +146,12 @@
     //     button.parent().parent().find('input').val(newVal);
     // });
     $('.quantity button').on('click', function () {
+
         let change = 0;
 
         var button = $(this);
         var oldValue = button.parent().parent().find('input').val();
+
         if (button.hasClass('btn-plus')) {
             var newVal = parseFloat(oldValue) + 1;
             change = 1;
